@@ -57,9 +57,7 @@ public class CourseService {
 
         if(course == null)
             throw new ApiException("Course not found");
-
-        Teacher teacher = teacherRepository.findTeacherById(course.getTeacher().getId());
-
-        return teacher.getName();
+        
+        return course.getTeacher().getName();
     }
 }
